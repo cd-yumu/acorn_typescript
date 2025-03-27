@@ -43,12 +43,20 @@ function App7() {
         
     }
 
+    // 상품을 추가하는 함수수
+    function addPhone(p:Product){
+        // 상품을 전달하는 것으로 추가한다 가정.
+        alert("추가 했습니다.");    
+    }
+
     return (
         <div>
             <pre>{JSON.stringify(state, null, 4)}</pre>
             <input type="text" name="name" onChange={handleChange} value={state.name} placeholder="Product's Name..." />
             <input type="text" name="price" onChange={handleChange} value={state.price} placeholder="Price..." />
-            <button>Add</button>
+            <button onClick={()=>{
+                addPhone(state);    // id (X), name(O), price(O) - id 가 없어도 전달 가능 (id 는 optional)
+            }}>Add</button>
 
             <h1>Phone List.</h1>
             <ul>
